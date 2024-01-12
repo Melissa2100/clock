@@ -13,8 +13,16 @@ function update() {
     let seconds = date.getSeconds();
     let amOrPm = hours >= 12 ? "pm" : "am";
 
-    hours = hours % 12 || 12; 
+    hours = hours % 12 || 12;
+
+    hours = formatZeros(hours);
+    minutes = formatZeros(minutes);
+    seconds = formatZeros(seconds);
 
     return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+  }
+  function formatZeros(time) {
+    time = time.toString();
+    return time.length < 2 ? "0" + time : time;
   }
 }
