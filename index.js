@@ -1,6 +1,7 @@
 const myLabel = document.getElementById("myLabel");
 
 update();
+setInterval(update, 1000);
 
 function update() {
   let date = new Date();
